@@ -1,0 +1,15 @@
+default: --profile html_and_json_output 
+smoke: --profile html_and_json_output --tags @smoke
+
+#output formats
+html_and_json_output: --format pretty --format html --out reports/report.html --format Cucumber::Formatter::JsonExpanded --out reports/report.json
+html_output: --format html --out reports/report.html
+json_output: --format Cucumber::Formatter::JsonExpanded --out reports/report.json
+
+#browsers
+ff: BROWSER=firefox
+ie: BROWSER=iexplore
+chrome: BROWSER=chrome
+safari: BROWSER=safari
+iphone: BROWSER=iphone
+

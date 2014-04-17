@@ -1,0 +1,11 @@
+require 'cucumber/rake/task'
+
+Cucumber::Rake::Task.new(:default) do |t|
+  t.profile = 'default'
+end
+
+Cucumber::Rake::Task.new(:smoke) do |t|
+  t.profile = 'smoke'
+end
+
+
