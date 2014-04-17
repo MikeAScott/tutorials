@@ -14,7 +14,7 @@ Then(/^the type of triangle is "(.*?)"$/) do |expected|
   @triangle.type.should == expected
 end
 
- Then(/^the triangle is right angled$/) do
+Then(/^the triangle is right angled$/) do
   @triangle.is_right_angled?.should be_true
 end
 
