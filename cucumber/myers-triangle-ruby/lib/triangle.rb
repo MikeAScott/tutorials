@@ -8,18 +8,31 @@ class Triangle
 
   def type
     case
-      when @a+@b<=@c || @b+@c<=@a || @a+@c<=@b
+    when sum_of_two_sides_is_less_than_or_equal_to_third?
         'Not a triangle'
-      when @a==@b && @b==@c
+    when all_sides_equal?
         'Equilateral'
-      when @a==@b || @b==@c || @a==@c
+    when two_sides_are_equal? 
         'Isosceles'
-      else
+    else
         'Scalene'
     end
+  end
+    
+  def sum_of_two_sides_is_less_than_or_equal_to_third?
+    @a+@b<=@c || @b+@c<=@a || @a+@c<=@b
+  end
+  
+  def all_sides_equal?
+    @a==@b && @b==@c
+  end
+  
+  def two_sides_are_equal?
+    @a==@b || @b==@c || @a==@c
   end
   
   def is_right_angled?
     @a*@a + @b*@b == @c*@c
   end
+    
 end
