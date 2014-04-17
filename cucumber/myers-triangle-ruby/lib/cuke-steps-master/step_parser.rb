@@ -35,12 +35,12 @@ class StepParser
       case line
       when /^ *#/
         @comments << line
-      when /^(Given|When|Then|Before|After|AfterStep|Transform) /
+     when /^(Given|When|Then|Before|After|AfterStep|Transform)/
         unread(line)
         parse_step
         @comments = []
-      when /^\s+(Given|When|Then|Before|After|AfterStep|Transform) /
-        puts "WARNING:  Indented step definition in file #{@current_file}:  #{line}"
+      when /^\s+(Given|When|Then|Before|After|AfterStep|Transform)/
+        puts "WARNING:  Indented step definition in file #{@current_file}:  #{line}  - IGNORED"
         @comments = []
       else
         @comments = []

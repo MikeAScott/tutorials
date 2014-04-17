@@ -71,12 +71,15 @@ end
 all_steps = []
 output.header
 dirs.each do |dir|
+  puts "Processing dir: #{dir}"
+  
   dir = dir.sub(/\/+$/, "")
-  s = StepParser.new
+  parser = StepParser.new
   Dir.glob("#{dir}/**/*.rb") do |file|
-    s.read(file)
-  end
-  steps = s.steps
+     parser.read(file)
+   end
+  steps = parser.steps
+  puts "  found #{parser.steps.length} steps"
   all_steps += steps
 
   output.start_directory(dir)

@@ -1,6 +1,7 @@
 require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:default) do |t|
+  Dir.mkdir "reports" unless File.directory?("reports")
   t.profile = 'default'
 end
 

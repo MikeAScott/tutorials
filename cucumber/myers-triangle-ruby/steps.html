@@ -30,8 +30,38 @@
       <body>
 <p>&nbsp;</p>
 <h2>Step definitions in features/</h2>
+<h3>When definitions</h3>
+<ul class="stepdefs">
+<li>
+  <a href="#" onclick="$('#id1').slideToggle(); return false;" class="stepdef">When(/^the sides are (\d+),(\d+),(\d+)$/) do |a,b,c|</a>
+  <div id="id1" class="extrainfo">
+    <p style="color: #888;">features/step_definitions/triangle_steps.rb:8</p>
+      <pre style="background-color: #ddd; padding-top: 1.2em;">
+   # Create a triangle with sides (a,b,c)
+   # e.g: When the sides are 1,2,3  
+   When(/^the sides are (\d+),(\d+),(\d+)$/) do |a,b,c|
+     @triangle = Triangle.new a.to_i,b.to_i,c.to_i
+   
+   end
+      </pre>
+  </div>
+</li>
+</ul>
+<h3>Then definitions</h3>
+<ul class="stepdefs">
+<li>
+  <a href="#" onclick="$('#id2').slideToggle(); return false;" class="stepdef">Then(/^the type of triangle is &quot;(.*?)&quot;$/) do |expected|</a>
+  <div id="id2" class="extrainfo">
+    <p style="color: #888;">features/step_definitions/triangle_steps.rb:13</p>
+      <pre style="background-color: #ddd; padding-top: 1.2em;">
+   Then(/^the type of triangle is &quot;(.*?)&quot;$/) do |expected|
+     @triangle.type.should == expected
+   end
+      </pre>
+  </div>
+</li>
       </ul>
       <p>&nbsp;</p>
-      <p><em>Documentation generated 2014-04-16 15:05:37 +0100</em></p>
+      <p><em>Documentation generated 2014-04-17 13:03:59 +0100</em></p>
       </body>
       </html>
