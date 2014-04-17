@@ -6,6 +6,7 @@ Cucumber::Rake::Task.new(:default) do |t|
 end
 
 Cucumber::Rake::Task.new(:smoke) do |t|
+  Dir.mkdir "reports" unless File.directory?("reports")
   t.profile = 'smoke'
 end
 

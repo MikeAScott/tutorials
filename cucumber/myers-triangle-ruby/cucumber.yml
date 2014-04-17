@@ -1,6 +1,7 @@
 default: --profile html_and_json_output 
 smoke: --profile html_and_json_output --tags @smoke
 stepdefs: -d -f stepdefs --no-profile
+usage: -d -f usage --no-profile
 
 #output formats
 html_and_json_output: --format pretty --format html --out reports/report.html --format Cucumber::Formatter::JsonExpanded --out reports/report.json
