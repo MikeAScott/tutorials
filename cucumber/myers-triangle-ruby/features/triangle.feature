@@ -22,23 +22,20 @@ Scenario Outline: Triangle type depeneds on the lengths of the sides
 	When the sides are <a>,<b>,<c>
 	Then the type of triangle is "<type>"
 	Examples:
-	| a | b | c | type			|
-	| 2 | 2 | 2 | Equilateral	|
-	| 2 | 2 | 1 | Isosceles		|
-	| 1 | 2 | 2 | Isosceles		|
-	| 2 | 1 | 2 | Isosceles		|
-	| 2 | 3 | 4 | Scalene		|
-	| 0 | 2 | 2 | Not a triangle|
-	| 1 | 9 | 2 | Not a triangle|
-	| 0 | 0 | 0 | Not a triangle|
+ | a  | b | c | type           |
+ | 2  | 2 | 2 | Equilateral    |
+ | 2  | 2 | 1 | Isosceles      |
+ | 1  | 2 | 2 | Isosceles      |
+ | 2  | 1 | 2 | Isosceles      |
+ | 2  | 3 | 4 | Scalene        |
+ | 0  | 2 | 2 | Not a triangle |
+ | 1  | 9 | 2 | Not a triangle |
+ | 0  | 0 | 0 | Not a triangle |
+ | -1 | 2 | 3 | Not a triangle |
 	
 Scenario: Triangle is right angled when pythagoras is correct
 	When the sides are 3,4,5
 	Then the triangle is right angled	
-		
+	
 
 
-
-
- 
-  	

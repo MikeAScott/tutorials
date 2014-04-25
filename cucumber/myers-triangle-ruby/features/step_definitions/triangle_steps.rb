@@ -5,7 +5,7 @@ require 'triangle'
 
 # Create a triangle with sides (a,b,c)
 # e.g: When the sides are 1,2,3  
-When(/^the sides are (\d+),(\d+),(\d+)$/) do |a,b,c|
+When(/^the sides are (.*),(.*),(.*)$/) do |a,b,c|
   @triangle = Triangle.new a.to_i,b.to_i,c.to_i
 
 end
