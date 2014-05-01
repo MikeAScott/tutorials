@@ -15,6 +15,7 @@ fi
 FITNESSE_DIR=`dirname $0`
 FITNESSE_JAR=bin/fitnesse-20140418-standalone.jar
 
+git submodule update --init --recursive
 mvn package
 
  
