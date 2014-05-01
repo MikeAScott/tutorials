@@ -1,0 +1,43 @@
+!|import |
+|Fixtures|
+
+
+${rubyslim}
+
+!1 Myers Triangle
+In order to remember my high school maths
+
+As a maths student
+
+I want a function that tells me the type of triangle given the lengths of the sides
+
+!2 Business Rules:
+ * We are not concerned about right angled triangles at the moment
+ * Types of triangle are:
+
+   * Equilateral - All sides are the same
+   * Isosceles - Two sides are the same
+   * Scalene - All sides are different
+
+ * If the sum of two sides is less than or equal to the other side Not a triangle is returned
+
+!2 Scenario Outline:
+ Triangle type depeneds on the lengths of the sides
+
+	When the sides are <a>,<b>,<c>
+
+	Then the type of triangle is "<type>"
+
+!2 Examples:
+|Check Triangle Type  |
+|a |b|c|type?         |
+|2 |2|2|Equilateral   |
+|2 |2|1|Isosceles     |
+|1 |2|2|Isosceles     |
+|2 |1|2|Isosceles     |
+|2 |3|4|Scalene       |
+|0 |2|2|Not a triangle|
+|1 |9|2|Not a triangle|
+|0 |0|0|Not a triangle|
+|-1|2|3|Not a triangle|
+|a |a|a|Not a triangle|

@@ -1,0 +1,25 @@
+Myers Triangle
+!*> Environment setup
+#!define TEST_SYSTEM {slim}
+#!define TEST_RUNNER {rubyslim}
+#!define COMMAND_PATTERN {rubyslim}
+
+!define TEST_SYSTEM {slim}
+!define TEST_RUNNER (rubyslim/bin/rubyslim)
+!define COMMAND_PATTERN {ruby -I %p %m}      
+
+!path lib/fixtures
+!path lib
+
+
+
+
+!path lib/fixtures
+
+
+*!
+
+
+A tutorial exercise for BDD
+
+!contents -R2 -g -p -f -h

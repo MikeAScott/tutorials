@@ -1,0 +1,3 @@
+[submodule "fitnesse/rubyslim"]
+	path = fitnesse/rubyslim
+	url = https://github.com/unclebob/rubyslim.git
