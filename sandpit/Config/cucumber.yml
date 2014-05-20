@@ -1,4 +1,4 @@
 <% reports = "--format pretty --format html --out reports/feature_report.html --format json --out reports/feature_report.json" %>
 
-default: BROWSER=firefox --require features <%= reports %>
+default: BROWSER=firefox --require features <%= reports %> --tags ~@wip
 
