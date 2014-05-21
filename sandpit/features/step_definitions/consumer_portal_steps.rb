@@ -1,20 +1,21 @@
 require 'sign_in_page'
-
-def goto_consumer_portal_page
-  user_id = "songbird"
-  password = "Inn0vat3"
-  page_url = "os-bqa1.analoganalytics.com/consumer"
-  visit "https://#{user_id}:#{password}@#{page_url}"
-  
-  page.title.should include("bespoke offers")
-end
+require 'portal_page'
+require 'current_page'
 
 def sign_in_page
   @sign_in_page ||= SignInPage.new
 end
 
+def portal_page
+  @portal_page ||= PortalPage.new
+end
+
+def current_page
+  @current_page ||= CurrentPage.new
+end
+
 Given(/^I am on the Consumer Portal Home Page$/) do
-  goto_consumer_portal_page
+  portal_page.go_to
 end
 
 When(/^I click "(.*?)"$/) do |link|
@@ -22,11 +23,11 @@ When(/^I click "(.*?)"$/) do |link|
 end
 
 Then(/^I expect to see the "(.*?)" form$/) do |text|
-  expect(page).to have_content(text)
+  current_page.expect_to_see(text)
 end
 
 Given(/^I am on the user login page$/) do
-  goto_consumer_portal_page
+  portal_page.go_to
   click_on "Sign In"
 end
 
@@ -35,7 +36,7 @@ When(/^I enter email "(.*?)" with password "(.*?)"$/) do |email, password|
 end
 
 Then(/^I expect to be signed in$/) do
-  expect(page).to have_content("You've signed in successfully.")
+  portal_page.check_is_signed_in
 end
 
 When(/^I click the sign in button$/) do
@@ -51,4 +52,13 @@ When(/^I attempt to sign in with email: "(.*?)" and password: "(.*?)"$/) do |ema
   sign_in_page.sign_in
 end
 
+#TODO: Move these to an appropriate place
+When(/^I hover over "(.*?)"$/) do |link|
+  find_link(link).hover
+  sleep(5)
+end
+
+Then(/^I expect to see the "(.*?)" link$/) do |link|
+  expect(find_link link).to be_visible
+end
 
