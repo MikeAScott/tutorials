@@ -1,5 +1,5 @@
 require 'sign_in_page'
-require 'reset_password'
+
 
 def goto_consumer_portal_page
   user_id = "songbird"
