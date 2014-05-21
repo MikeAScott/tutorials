@@ -35,7 +35,7 @@ Feature: Consumer login
 
   @wip
   Scenario: User can begin forgotten password reset
-    Given I am on the user log in page
+    Given I am on the user login page
     When I click forgotten password?
     Then I expect to see the reset your password page
 

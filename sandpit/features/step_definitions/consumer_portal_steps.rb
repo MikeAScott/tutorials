@@ -55,14 +55,13 @@ When(/^I attempt to sign in with email: "(.*?)" and password: "(.*?)"$/) do |ema
   @sign_in_page.fill_in_details(email, password)
   @sign_in_page.sign_in
 end
-
-Given(/^I am on the sign in page$/) do 
-  @reset_password.forgotten_password
-  
-end 
  
-Then(/^I expected to see the reset your password page$/) do 
+Then(/^I expect to see the reset your password page$/) do 
   expect(page).to have_content("Reset your password")
+end 
+
+When(/^I click forgotten password\?$/) do 
+  @sign_in_page.forgotten_password
 end 
 
 
