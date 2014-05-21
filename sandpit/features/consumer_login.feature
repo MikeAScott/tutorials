@@ -31,3 +31,6 @@ Feature: Consumer login
       | testing  | This email address is invalid. An email must contain an @ and a full stop. |
       | 1@2.33   | Your login details can not be found.                                       |
       | @@@@@... | Your login details can not be found.                                       |
+      
+  Scenario: User account is locked after 5 unsuccessful logins
+  
