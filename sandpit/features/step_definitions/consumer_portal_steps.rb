@@ -10,6 +10,7 @@ def goto_consumer_portal_page
   page.title.should include("bespoke offers")
 end
 
+
  def forgotten_password
     click_on "Forgotten your password?"
     #@reset_password = ResetPasswordPage.new
