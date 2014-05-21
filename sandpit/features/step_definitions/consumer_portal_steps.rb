@@ -1,4 +1,5 @@
 require 'sign_in_page'
+require 'reset_password'
 
 def goto_consumer_portal_page
   user_id = "songbird"
@@ -8,6 +9,11 @@ def goto_consumer_portal_page
   
   page.title.should include("bespoke offers")
 end
+
+ def forgotten_password
+    click_on "Forgotten your password?"
+    #@reset_password = ResetPasswordPage.new
+  end 
 
 
 Given(/^I am on the Consumer Portal Home Page$/) do
@@ -48,5 +54,14 @@ When(/^I attempt to sign in with email: "(.*?)" and password: "(.*?)"$/) do |ema
   @sign_in_page.fill_in_details(email, password)
   @sign_in_page.sign_in
 end
+
+Given(/^I am on the sign in page$/) do 
+  @reset_password.forgotten_password
+  
+end 
+ 
+Then(/^I expected to see the reset your password page$/) do 
+  expect(page).to have_content("Reset your password")
+end 
 
 

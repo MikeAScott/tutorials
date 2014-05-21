@@ -18,7 +18,9 @@ Feature: Consumer login
 
   Scenario: User can't login with invalid password
 
+
   Scenario: Unregistered user can't login
+
 
   Scenario Outline: Username must be a valid email format
     Given I am on the user login page
@@ -31,3 +33,9 @@ Feature: Consumer login
       | testing  | This email address is invalid. An email must contain an @ and a full stop. |
       | 1@2.33   | Your login details can not be found.                                       |
       | @@@@@... | Your login details can not be found.                                       |
+      
+  @wip
+  Scenario: User can begin forgotten password reset
+    Given I am on the user log in page
+    When I click forgotten password?
+    Then I expect to see the reset your password page

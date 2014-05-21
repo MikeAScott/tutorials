@@ -13,5 +13,9 @@ class SignInPage
   def expect_error(error_message)
     expect(page).to have_content(error_message)
   end
+  
+  def forgotten_password
+    click_on "Forgotten your password?"
+  end
     
 end
