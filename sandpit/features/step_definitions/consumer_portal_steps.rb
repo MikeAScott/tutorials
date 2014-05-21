@@ -9,7 +9,6 @@ def goto_consumer_portal_page
   page.title.should include("bespoke offers")
 end
 
-
 Given(/^I am on the Consumer Portal Home Page$/) do
   goto_consumer_portal_page
 end
