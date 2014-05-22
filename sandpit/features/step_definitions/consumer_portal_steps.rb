@@ -57,6 +57,14 @@ When(/^I hover over "(.*?)"$/) do |link|
   find_link(link).hover
   sleep(5)
 end
+ 
+Then(/^I expect to see the reset your password page$/) do 
+  expect(page).to have_content("Reset your password")
+end 
+
+When(/^I click forgotten password\?$/) do 
+  sign_in_page.forgotten_password
+end 
 
 Then(/^I expect to see the "(.*?)" link$/) do |link|
   expect(find_link link).to be_visible

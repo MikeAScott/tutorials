@@ -16,7 +16,9 @@ Feature: Consumer login
 
   Scenario: User can't login with invalid password
 
+
   Scenario: Unregistered user can't login
+
 
   Scenario Outline: Username must be a valid email format
     Given I am on the user login page
@@ -30,13 +32,19 @@ Feature: Consumer login
       | 1@2.33   | Your login details can not be found.                                       |
       | @@@@@... | Your login details can not be found.                                       |
       
+
+  Scenario: User can begin forgotten password reset
+    Given I am on the user login page
+    When I click forgotten password?
+    Then I expect to see the reset your password page
+
   Scenario: User account is locked after 5 unsuccessful logins
   
   Scenario: Signed in user can sign out
- 
-@wip  
+  
   Scenario: Hovering over Categories menu shows categories
     Given I am on the Consumer Portal Home Page
 	When I hover over "Food"
 	Then I expect to see the "Food & Wine gifts" link
-	  
+
+
